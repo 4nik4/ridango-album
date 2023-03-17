@@ -18,4 +18,31 @@ export class ApiService {
   getAlbumPhotos(albumId?: number) {
     return this.http.get(`https://jsonplaceholder.typicode.com/albums/${albumId}/photos`)
   }
+
+  //add photo
+  addAlbumPhoto() {
+    return this.http.post(`https://jsonplaceholder.typicode.com/photos`, {
+      title: 'foo',
+      url: 'bar',
+      thumbnailUrl: 'test',
+      albumId: 1,
+    })
+  }
+  //add album
+  addUserAlbum() {
+    return this.http.post(`https://jsonplaceholder.typicode.com/albums`, {
+      userId: 1,
+      title: "sunt qui excepturi placeat culpa"
+    })
+  }
+
+  //remove photo
+  deleteAlbumPhoto(photoId?: number) {
+    return this.http.delete(`https://jsonplaceholder.typicode.com/photos/${photoId}`)
+  }
+
+  //remove album
+  deleteUserAlbum(albumId?: number) {
+    return this.http.delete(`https://jsonplaceholder.typicode.com/albums/${albumId}`)
+  }
 }

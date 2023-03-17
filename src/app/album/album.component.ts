@@ -30,4 +30,11 @@ export class AlbumComponent implements OnInit {
     this.sub.unsubscribe();
   }
 
+  onDeletePhoto(id?: number) {
+    // track delete log
+    this.api.deleteAlbumPhoto(id).subscribe( _ => {
+      this.photos = this.photos.filter((photo: { id: number | undefined; }) => photo.id !== id)
+    })
+  }
+
 }

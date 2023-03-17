@@ -1,10 +1,9 @@
-<p>user works!</p>
-{{id}}
-
-albums
-
 <div *ngFor = "let album of albums; let i = index" >
-    <mat-card class="album-card" [routerLink]="['./album', album.id]">
+    <mat-card class="album-card" >
        <mat-card-subtitle>{{album.title}}</mat-card-subtitle>
+       <mat-card-actions>
+        <button mat-button [routerLink]="['./album', album.id]">Visit</button>
+        <button mat-button (click)="onDeleteAlbum(album.id)">Delete</button>
+      </mat-card-actions>
      </mat-card>
  </div>
