@@ -40,6 +40,7 @@ export class UserComponent implements OnInit {
   }
 
   onAddAlbum(title: string) {
+    // track add log
     this.api.addUserAlbum(this.id, title).subscribe(data => {
       this.albums.push(data)
     })

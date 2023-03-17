@@ -18,6 +18,12 @@ For additional endpoints see: https://jsonplaceholder.typicode.com/
 
 2) user - user album list - photos - delete/add
 
+TODO:
+- add photos
+- delete photos
+- global logs
+- user logs
+
 
 
 # RidangoAlbum
