@@ -41,6 +41,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { UserComponent } from './user/user.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     AppComponent,
     AlbumComponent,
     LogComponent,
-    UsersComponent
+    UsersComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

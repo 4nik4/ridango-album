@@ -12,7 +12,10 @@ export class ApiService {
   getUsers() {
     return this.http.get('https://jsonplaceholder.typicode.com/users/'); 
   }
-  getAlbums() {
-    return this.http.get('https://jsonplaceholder.typicode.com/albums/'); 
+  getUserAlbums(userId?: number) {
+    return this.http.get(`https://jsonplaceholder.typicode.com/users/${userId}/albums`); 
+  }
+  getAlbumPhotos(albumId?: number) {
+    return this.http.get(`https://jsonplaceholder.typicode.com/albums/${albumId}/photos`)
   }
 }

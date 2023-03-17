@@ -3,28 +3,29 @@ import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service';
 
 @Component({
-  selector: 'app-album',
-  templateUrl: './album.component.html',
-  styleUrls: ['./album.component.scss']
+  selector: 'app-user',
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.scss']
 })
-export class AlbumComponent implements OnInit {
+export class UserComponent implements OnInit {
   id?: number;
   private sub: any;
-  photos: any
+  albums: any
   constructor(
-    private api: ApiService,
     private route: ActivatedRoute,
-  ) {}
+    private api: ApiService
+  ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.sub = this.route.params.subscribe(params => {
       this.id = +params['id']; // (+) converts string 'id' to a number
    });
 
-   this.api.getAlbumPhotos(this.id).subscribe((data)=>{
-    this.photos = data; 
+   this.api.getUserAlbums(1).subscribe((data)=>{
+    this.albums = data; 
   })
   }
+
 
   ngOnDestroy() {
     this.sub.unsubscribe();

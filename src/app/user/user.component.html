@@ -1,0 +1,9 @@
+<p>user works!</p>
+{{id}}
+
+albums
+<a *ngFor = "let album of albums; let i = index" [routerLink]="['./album', album.id]">
+    {{album.title}}
+</a>
+
+<router-outlet></router-outlet>

@@ -16,7 +16,6 @@ Get photos in album: https://jsonplaceholder.typicode.com/albums/%7BalbumId%7D/p
 
 For additional endpoints see: https://jsonplaceholder.typicode.com/
 
-1) album - photos - delete/add
 2) user - user album list - photos - delete/add
 
 
