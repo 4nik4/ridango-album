@@ -18,7 +18,7 @@ export class AlbumComponent implements OnInit {
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-      this.id = +params['id']; // (+) converts string 'id' to a number
+      this.id = +params['albumId']; // (+) converts string 'id' to a number
    });
 
    this.api.getAlbumPhotos(this.id).subscribe((data)=>{

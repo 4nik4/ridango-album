@@ -1,7 +1,16 @@
 <p>album works!</p>
 
-list photos here
+<h1>list photos here</h1>
 
-<a *ngFor = "let photo of photos; let i = index">
-   {{photo.title}}
-</a>
+<div *ngFor = "let photo of photos; let i = index">
+   <mat-card class="photo-card">
+      <mat-card-title-group>
+         <mat-card-title>{{photo.title}}</mat-card-title>
+         <a href="{{photo.url}}">
+            <img src="{{photo.thumbnailUrl}}" height="150" width="150">
+         </a>
+      </mat-card-title-group>
+
+   </mat-card>
+
+</div>

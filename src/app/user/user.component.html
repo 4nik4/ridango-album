@@ -2,8 +2,9 @@
 {{id}}
 
 albums
-<a *ngFor = "let album of albums; let i = index" [routerLink]="['./album', album.id]">
-    {{album.title}}
-</a>
 
-<router-outlet></router-outlet>
+<div *ngFor = "let album of albums; let i = index" >
+    <mat-card class="album-card" [routerLink]="['./album', album.id]">
+       <mat-card-subtitle>{{album.title}}</mat-card-subtitle>
+     </mat-card>
+ </div>
