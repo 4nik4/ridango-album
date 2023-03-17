@@ -1,5 +1,38 @@
+.albums, .actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
 .album-card {
-    max-width: 400px;
+    width: 400px;
+    height: 100px;
     margin: 15px;
     padding: 10px;
+
+    &__content {
+        display: flex;
+        justify-content: left;
+        .icon-box {
+            height: 60px;
+            width: 60px;
+            background-color: floralwhite;
+            margin-right: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .title-section {
+            max-width: 300px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .mat-card-actions {
+                margin: 0;
+            }
+        }
+    }
 }
