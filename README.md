@@ -1,3 +1,26 @@
+Create a simple photo album web app.
+
+The web app should show a list of users when loaded. Each user has a number of albums containing pictures.
+
+On the album page, allow user create/delete user albums and pictures. 
+Create a log page containing actions taken. E.g. “User x deleted one picture” 
+User page should have a section displaying the albums and a section displaying user action metrics E.g. “Albums: 5 Created: 1 Deleted: 2”
+
+Endpoints
+
+List all users: https://jsonplaceholder.typicode.com/users/ 
+List all albums belonging to user with id: https://jsonplaceholder.typicode.com/users/%7Bid%7D/albums [ https://jsonplaceholder.typicode.com/users/%7Bid%7D/albums ] 
+Get Album data: https://jsonplaceholder.typicode.com/albums/%7BalbumId%7D [ https://jsonplaceholder.typicode.com/albums/%7BalbumId%7D ] 
+Get photos in album: https://jsonplaceholder.typicode.com/albums/%7BalbumId%7D/photos 
+[ https://jsonplaceholder.typicode.com/albums/%7BalbumId%7D/photos ]
+
+For additional endpoints see: https://jsonplaceholder.typicode.com/
+
+1) album - photos - delete/add
+2) user - user album list - photos - delete/add
+
+
+
 # RidangoAlbum
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
