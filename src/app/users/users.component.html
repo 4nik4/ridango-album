@@ -1,9 +1,9 @@
-<button mat-button routerLink="../albums">
-   Albums
- </button>
-<p>users works!</p>
-
- <a *ngFor = "let user of users; let i = index"
-  [routerLink]="['/user', user.id]">
-  {{ user.name }}
-</a>
+<div *ngFor = "let user of users; let i = index">
+   <mat-card class="user-card" [routerLink]="['/user', user.id]">
+      <mat-card-title>{{ user.name }}</mat-card-title>
+      <mat-card-subtitle>{{ user.username }}</mat-card-subtitle>
+      <mat-card-content>
+        <p>{{ user.company.catchPhrase }}</p>
+      </mat-card-content>
+    </mat-card>
+</div>
