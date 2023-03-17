@@ -31,11 +31,17 @@ export class UserComponent implements OnInit {
     this.sub.unsubscribe();
   }
 
-  onDeleteAlbum(id?: number) {
+  onDeleteAlbum(id: number) {
     // track delete log
     console.log("deleting album")
     this.api.deleteUserAlbum(id).subscribe( _ => {
       this.albums = this.albums.filter((album: { id: number | undefined; }) => album.id !== id)
+    })
+  }
+
+  onAddAlbum(title: string) {
+    this.api.addUserAlbum(this.id, title).subscribe(data => {
+      this.albums.push(data)
     })
   }
 

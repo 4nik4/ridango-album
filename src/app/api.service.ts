@@ -20,19 +20,18 @@ export class ApiService {
   }
 
   //add photo
-  addAlbumPhoto() {
-    return this.http.post(`https://jsonplaceholder.typicode.com/photos`, {
-      title: 'foo',
-      url: 'bar',
-      thumbnailUrl: 'test',
-      albumId: 1,
+  addAlbumPhoto(albumId?: number, title?: string, url?: string, thumbnailUrl?: string) {
+    return this.http.put(`https://jsonplaceholder.typicode.com//albums/${albumId}/photos`, {
+      title: title,
+      url: url,
+      thumbnailUrl: thumbnailUrl,
     })
   }
   //add album
-  addUserAlbum() {
+  addUserAlbum(userId?: number, title?: string) {
     return this.http.post(`https://jsonplaceholder.typicode.com/albums`, {
-      userId: 1,
-      title: "sunt qui excepturi placeat culpa"
+      title: title,
+      userId: userId
     })
   }
 

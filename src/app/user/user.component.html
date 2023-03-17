@@ -1,5 +1,12 @@
+“Albums: 5 Created: 1 Deleted: 2”
+
 <div class="actions">
-  <button mat-raised-button color="accent">Add album</button>
+  <mat-form-field appearance="outline">
+    <mat-label>New album title</mat-label>
+    <input matInput placeholder="Album title" id="albumTitle" name="albumTitle" #albumTitle>
+    <mat-icon matSuffix>add_photo_alternate</mat-icon>
+  </mat-form-field>
+  <button mat-raised-button color="accent" (click)="onAddAlbum(albumTitle.value)">Add album</button>
 </div>
 
 

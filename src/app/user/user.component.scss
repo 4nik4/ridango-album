@@ -1,9 +1,18 @@
-.albums, .actions {
+.albums {
     width: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 50px;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    padding: 50px;
 }
 
 .album-card {
