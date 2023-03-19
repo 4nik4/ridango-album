@@ -1,5 +1,27 @@
+.album {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    padding: 50px;
+}
+
 .photo-card {
-    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 150px;
     margin: 15px;
-    padding: 20px;
+    height: 300px;
+    mat-card-title-group {
+        flex-direction: column-reverse;
+    }
 }

@@ -37,4 +37,12 @@ export class AlbumComponent implements OnInit {
     })
   }
 
+  onAddPhoto(title?: string, url?: string, thumbnailUrl?: string) {
+    // track add log
+    console.log(title, url, thumbnailUrl)
+    this.api.addAlbumPhoto(this.id, title, url, thumbnailUrl).subscribe(data => {
+      this.photos.unshift(data)
+    })
+  }
+
 }

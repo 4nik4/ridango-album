@@ -21,7 +21,7 @@ export class UserComponent implements OnInit {
       this.id = +params['id']; // (+) converts string 'id' to a number
    });
 
-   this.api.getUserAlbums(1).subscribe((data)=>{
+   this.api.getUserAlbums(this.id).subscribe((data)=>{
     this.albums = data; 
   })
   }
@@ -40,7 +40,7 @@ export class UserComponent implements OnInit {
   }
 
   onAddAlbum(title: string) {
-    // track add log
+    // track add
     this.api.addUserAlbum(this.id, title).subscribe(data => {
       this.albums.push(data)
     })
