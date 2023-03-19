@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./log.component.scss']
 })
 export class LogComponent implements OnInit {
-
+  logs: any;
   constructor() { }
 
   ngOnInit(): void {
+    this.logs = JSON.parse(localStorage.getItem("logs") || "[]")
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service';
+import { Album, User } from '../interfaces';
 
 @Component({
   selector: 'app-user',
@@ -10,10 +11,10 @@ import { ApiService } from '../api.service';
 export class UserComponent implements OnInit {
   id?: number;
   private sub: any;
-  albums: any
+  albums?: Album[]
   created: number = 0;
   deleted: number = 0;
-  user: any
+  user?: User
   constructor(
     private route: ActivatedRoute,
     private api: ApiService
@@ -43,10 +44,10 @@ export class UserComponent implements OnInit {
     // track delete log
     console.log("deleting album")
     this.api.deleteUserAlbum(id).subscribe(_ => {
-      this.albums = this.albums.filter((album: { id: number | undefined; }) => album.id !== id)
+      this.albums = this.albums?.filter((album: { id: number | undefined; }) => album.id !== id)
       this.deleted++
       let getStorage = JSON.parse(localStorage.getItem("logs") || "[]")
-      getStorage.unshift(`${this.user.name} deleted an album`)
+      getStorage.unshift(`${this.user?.name} deleted an album`)
       localStorage.setItem("logs", JSON.stringify(getStorage));
     })
   }
@@ -54,11 +55,10 @@ export class UserComponent implements OnInit {
   onAddAlbum(title: string) {
     // track add
     this.api.addUserAlbum(this.id, title).subscribe(data => {
-      this.albums.unshift(data)
+      this.albums?.unshift(data)
       this.created++
       let getStorage = JSON.parse(localStorage.getItem("logs") || "[]")
-      console.log(getStorage)
-      getStorage.unshift(`${this.user.name} added an album`)
+      getStorage.unshift(`${this.user?.name} added an album`)
       localStorage.setItem("logs", JSON.stringify(getStorage));
     })
   }
