@@ -52,4 +52,3 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - User centric stats are done using in-component state, for the sake of simplicity. Which means that they don't persist when going away from the page.
 - for simplicity of tracking global logs, I used localStorage. It would probably be better to use something like RxJS, but I felt a bit short on time to plug that in properly :)
 - There is no validation on inputs, which would probably be a good idea.
-
