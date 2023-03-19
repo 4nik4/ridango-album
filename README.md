@@ -16,12 +16,6 @@ Get photos in album: https://jsonplaceholder.typicode.com/albums/%7BalbumId%7D/p
 
 For additional endpoints see: https://jsonplaceholder.typicode.com/
 
-TODO:
-- global logs
-- user logs
-
-
-
 # RidangoAlbum
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
@@ -55,7 +49,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Personal Notes:
 
 - The albums/photos don't persist after deleting/adding, which seems to be the nature of the API. I could have come up with a solution using localStorage to make them persist, but it felt like an overkill and it would just add unnecessary complexity.
-- User centric stats are done using in-component state.
-- for simplicity of tracking global logs, I used localStorage. It would probably be better to use something like RxJS, but I felt a bit short on time to plug that in :)
+- User centric stats are done using in-component state, for the sake of simplicity. Which means that they don't persist when going away from the page.
+- for simplicity of tracking global logs, I used localStorage. It would probably be better to use something like RxJS, but I felt a bit short on time to plug that in properly :)
+- There is no validation on inputs, which would probably be a good idea.
 
-- There is no validation on inputs
