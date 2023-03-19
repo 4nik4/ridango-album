@@ -12,6 +12,9 @@ export class ApiService {
   getUsers() {
     return this.http.get('https://jsonplaceholder.typicode.com/users/'); 
   }
+  getUserInfo(id?: number) {
+    return this.http.get(`https://jsonplaceholder.typicode.com/users/${id}`); 
+  }
   getUserAlbums(userId?: number) {
     return this.http.get(`https://jsonplaceholder.typicode.com/users/${userId}/albums`); 
   }

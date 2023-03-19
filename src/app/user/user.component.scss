@@ -6,12 +6,18 @@
     margin-top: 50px;
 }
 
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 15px;
+}
+
 .actions {
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 50px;
     padding: 50px;
 }
 

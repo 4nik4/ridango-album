@@ -54,6 +54,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Personal Notes:
 
-- The albums/photos don't persist after deleting/adding. I could have come up with a hack using localStorage to make it persist, but it felt like an overkill. In actuality, if the server is reliable, albums/photos would persist after page re-loads, but since I am working with a mock api, the behaviour is expected
-- For the reasons above, user centric stats are done using in-component state since that would reflect on the actual data. 
-- for simplicity of tracking global logs, I used localStorage. 
+- The albums/photos don't persist after deleting/adding. I could have come up with a hack using localStorage to make them persist, but it felt like an overkill. In actuality, if the server is reliable, albums/photos would persist after page re-loads, but since I am working with a mock api, the behaviour is expected
+- For the reasons above, user centric stats are done using in-component state.
+- for simplicity of tracking global logs, I used localStorage

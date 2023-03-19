@@ -11,6 +11,9 @@ export class UserComponent implements OnInit {
   id?: number;
   private sub: any;
   albums: any
+  created: number = 0;
+  deleted: number = 0;
+  user: any
   constructor(
     private route: ActivatedRoute,
     private api: ApiService
@@ -19,11 +22,16 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
     this.sub = this.route.params.subscribe(params => {
       this.id = +params['id']; // (+) converts string 'id' to a number
-   });
+    });
 
-   this.api.getUserAlbums(this.id).subscribe((data)=>{
-    this.albums = data; 
-  })
+    this.api.getUserAlbums(this.id).subscribe((data) => {
+      this.albums = data;
+    })
+
+    this.api.getUserInfo(this.id).subscribe(data => {
+      this.user = data
+    })
+
   }
 
 
@@ -34,15 +42,24 @@ export class UserComponent implements OnInit {
   onDeleteAlbum(id: number) {
     // track delete log
     console.log("deleting album")
-    this.api.deleteUserAlbum(id).subscribe( _ => {
+    this.api.deleteUserAlbum(id).subscribe(_ => {
       this.albums = this.albums.filter((album: { id: number | undefined; }) => album.id !== id)
+      this.deleted++
+      let getStorage = JSON.parse(localStorage.getItem("logs") || "[]")
+      getStorage.unshift(`${this.user.name} deleted an album`)
+      localStorage.setItem("logs", JSON.stringify(getStorage));
     })
   }
 
   onAddAlbum(title: string) {
     // track add
     this.api.addUserAlbum(this.id, title).subscribe(data => {
-      this.albums.push(data)
+      this.albums.unshift(data)
+      this.created++
+      let getStorage = JSON.parse(localStorage.getItem("logs") || "[]")
+      console.log(getStorage)
+      getStorage.unshift(`${this.user.name} added an album`)
+      localStorage.setItem("logs", JSON.stringify(getStorage));
     })
   }
 
