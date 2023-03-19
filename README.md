@@ -16,11 +16,7 @@ Get photos in album: https://jsonplaceholder.typicode.com/albums/%7BalbumId%7D/p
 
 For additional endpoints see: https://jsonplaceholder.typicode.com/
 
-2) user - user album list - photos - delete/add
-
 TODO:
-- add photos
-- delete photos
 - global logs
 - user logs
 
@@ -53,3 +49,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+----
+
+## Personal Notes:
+
+- The albums/photos don't persist after deleting/adding. I could have come up with a hack using localStorage to make it persist, but it felt like an overkill. In actuality, if the server is reliable, albums/photos would persist after page re-loads, but since I am working with a mock api, the behaviour is expected
+- For the reasons above, user centric stats are done using in-component state since that would reflect on the actual data. 
+- for simplicity of tracking global logs, I used localStorage. 
